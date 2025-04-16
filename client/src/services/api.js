@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-// API Base URL
-const API_URL = 'http://localhost:5000/api';
+// API Base URL - dynamically determine based on environment
+const API_URL = import.meta.env.VITE_API_URL || 
+  (window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : 
+   window.location.hostname.includes('vercel.app') ? 'https://react-pk0c.onrender.com/api' : 
+   'https://react-pk0c.onrender.com/api');
 
 // Create axios instance
 const api = axios.create({
