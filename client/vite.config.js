@@ -9,7 +9,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         //target: 'http://localhost:5000',
-        target: 'https://react-pk0c.onrender.com',
+        target: 'https://react-pk0c.onrender.com:10000',
         changeOrigin: true,
         secure: false
       }
